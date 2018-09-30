@@ -24,6 +24,7 @@ Abp Code Snippets For Visual Studio Code And Visual Studio
 
 ## vscode
 
+![vscode-vue](vscode-vue.gif)
 
 ## vs2017
 
@@ -34,4 +35,7 @@ Abp Code Snippets For Visual Studio Code And Visual Studio
 
 欢迎大家提交ABP相关代码片段pr到本库，若有问题，请提issue。
 
-# MIT
+## 版本
+本库暂无版本管理，后续代码片段增加，若遇到prefix冲突或变更，再进行版本管理。
+
+## MIT
