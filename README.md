@@ -5,7 +5,7 @@ Abp Code Snippets For Visual Studio Code And Visual Studio
 vscode  
 
 | Prefix | Remark |
-| :---------: | :-------- |
+| :--------- | :-------- |
 | ivcreate | iview 创建弹层 |
 | ivedit | iview 编辑弹层 |
 | ivlist | iview 列表页 |
