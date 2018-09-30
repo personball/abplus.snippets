@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Abplus CRUD AppService片段</Title>
+      <Shortcut>asynccrud</Shortcut>
+      <Description>CRUD AppService片段</Description>
+      <Author>Personball</Author>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>Abp.Application.Services</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Abp.Domain.Repositories</Namespace>
+        </Import>
+         <Import>
+          <Namespace>Abp.Extensions</Namespace>
+        </Import>
+         <Import>
+          <Namespace>Abp.Linq.Extensions</Namespace>
+        </Import>
+         <Import>
+          <Namespace>System.Linq</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>替换为实体的名称</ToolTip>
+          <Default>EntityName</Default>
+        </Literal>
+        <Literal>
+          <ID>pname</ID>
+          <ToolTip>替换为本项目的名称</ToolTip>
+          <Default>ProjectName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+     public class $name$AppService : AsyncCrudAppService<$name$, $name$Dto, int, Paged$name$ResultRequestDto, Create$name$Dto, $name$Dto>, I$name$AppService
+    {
+        public $name$AppService(
+            IRepository<$name$> repository)
+            : base(repository)
+        {
+            LocalizationSourceName = $pname$Consts.LocalizationSourceName;
+        }
+        
+        protected override IQueryable<$name$> CreateFilteredQuery(Paged$name$ResultRequestDto input)
+        {
+            return Repository.GetAll()
+                //.WhereIf(!input.Keyword.IsNullOrWhiteSpace(), b => b.Name.Contains(input.Keyword))
+                .WhereIf(input.From.HasValue, b => b.CreationTime >= input.From.Value.LocalDateTime)
+                .WhereIf(input.To.HasValue, b => b.CreationTime <= input.To.Value.LocalDateTime);
+                //CreationTime是按照服务器时间存储，故表单提交的UTC时间可转为服务器LocalDateTime进行比较
+        }
+
+    }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Abplus FullAuditedEntity片段</Title>
+      <Shortcut>entityfa</Shortcut>
+      <Description>FullAuditedEntity片段</Description>
+      <Author>Personball</Author>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>Abp.Domain.Entities.Auditing</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.ComponentModel.DataAnnotations</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>替换为实体的名称</ToolTip>
+          <Default>EntityName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+     public class $name$:FullAuditedEntity
+    {
+        public const int MaxLengthName = 64;
+        public const int MaxLengthTitle = 512;
+        public const int MaxLengthContent = 5000;
+        /// <summary>
+        /// 名称
+        /// </summary>
+        [MaxLength(MaxLengthName)]
+        public string Name { get; set; }
+        /// <summary>
+        /// 标题
+        /// </summary>
+        [MaxLength(MaxLengthTitle)]
+        public string Title { get; set; }
+        /// <summary>
+        /// 内容
+        /// </summary>
+        [MaxLength(MaxLengthContent)]
+        public string Content { get; set; }
+    }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

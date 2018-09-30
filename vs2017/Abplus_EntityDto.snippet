@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Abplus EntityDto片段</Title>
+      <Shortcut>entitydto</Shortcut>
+      <Description>EntityDto片段</Description>
+      <Author>Personball</Author>
+    </Header>
+    <Snippet>
+     <Imports>
+        <Import>
+          <Namespace>Abp.AutoMapper</Namespace>
+        </Import>
+         <Import>
+          <Namespace>Abp.Application.Services.Dto</Namespace>
+        </Import>
+          <Import>
+          <Namespace>System.ComponentModel.DataAnnotations</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>替换为实体的名称</ToolTip>
+          <Default>EntityName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+    [AutoMapFrom(typeof($name$))]
+    public class $name$Dto : EntityDto
+    {
+        /// <summary>
+        /// 名称
+        /// </summary>
+        [StringLength($name$.MaxLengthName)]
+        public string Name { get; set; }
+
+        $end$
+
+        public DateTime CreationTime { get; set; }
+    }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

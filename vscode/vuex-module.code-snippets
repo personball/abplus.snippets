@@ -1,0 +1,75 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"ivmod-crud": {
+		"scope": "javascript,typescript",
+		"prefix": "ivmod-crud",
+		"body": [
+"import {Store,Module,ActionContext} from 'vuex'",
+"import ListModule from './list-module'",
+"import ListState from './list-state'",
+"import ${2:Name} from '../entities/${1:name}'",
+"import Ajax from '../../lib/ajax'",
+"import PageResult from '@/store/entities/page-result';",
+"import ListMutations from './list-mutations'",
+"import { stat } from 'fs';",
+"interface ${2:Name}State extends ListState<${2:Name}>{",
+"\tedit${2:Name}:${2:Name},",
+"}",
+"class ${2:Name}Mutations extends ListMutations<${2:Name}>{",
+"}",
+"class ${2:Name}Module extends ListModule<${2:Name}State,any,${2:Name}>{",
+"\tstate={",
+"\t\ttotalCount:0,",
+"\t\tcurrentPage:1,",
+"\t\tpageSize:10,",
+"\t\tlist: new Array<${2:Name}>(),",
+"\t\tloading:false,",
+"\t\tedit${2:Name}:new ${2:Name}(),",
+"\t}",
+"\tactions={",
+"\t\tasync getAll(context:ActionContext<${2:Name}State,any>,payload:any){",
+"            context.state.loading=true;",
+"            let reponse=await Ajax.get('/api/services/app/${2:Name}/GetAll',{params:payload.data});",
+"            context.state.loading=false;",
+"            let page=reponse.data.result as PageResult<${2:Name}>;",
+"            context.state.totalCount=page.totalCount;",
+"            context.state.list=page.items;",
+"        },",
+"        async create(context:ActionContext<${2:Name}State,any>,payload:any){",
+"            await Ajax.post('/api/services/app/${2:Name}/Create',payload.data);",
+"        },",
+"        async update(context:ActionContext<${2:Name}State,any>,payload:any){",
+"            await Ajax.put('/api/services/app/${2:Name}/Update',payload.data);",
+"        },",
+"        async delete(context:ActionContext<${2:Name}State,any>,payload:any){",
+"            await Ajax.delete('/api/services/app/${2:Name}/Delete?Id='+payload.data.id);",
+"        },",
+"        async get(context:ActionContext<${2:Name}State,any>,payload:any){",
+"            let reponse=await Ajax.get('/api/services/app/${2:Name}/Get?Id='+payload.id);",
+"            return reponse.data.result as ${2:Name};",
+"        }",
+"    };",
+"    mutations={",
+"        setCurrentPage(state:${2:Name}State,page:number){",
+"            state.currentPage=page;",
+"        },",
+"        setPageSize(state:${2:Name}State,pagesize:number){",
+"            state.pageSize=pagesize;",
+"        },",
+"        edit(state:${2:Name}State,${1:name}:${2:Name}){",
+"            state.edit${2:Name}=${1:name};",
+"        }",
+"    }",
+"}",
+"const ${1:name}Module=new ${2:Name}Module();",
+"export default ${1:name}Module;"
+		],
+		"description": "生成vuex的module代码"
+	}
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Abplus Entity Map Profile片段</Title>
+      <Shortcut>mapprofile</Shortcut>
+      <Description>Entity Map Profile片段</Description>
+      <Author>Personball</Author>
+    </Header>
+    <Snippet>
+     <Imports>
+        <Import>
+          <Namespace>AutoMapper</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>替换为实体的名称</ToolTip>
+          <Default>EntityName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+     public class $name$MapProfile : Profile
+    {
+        public $name$MapProfile()
+        {
+            CreateMap<$name$Dto, $name$>();
+            CreateMap<$name$Dto, $name$>()
+                .ForMember(x => x.CreationTime, opt => opt.Ignore());
+        }
+    }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

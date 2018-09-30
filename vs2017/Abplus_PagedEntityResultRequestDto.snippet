@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Abplus CRUD PagedEntityResultRequest片段</Title>
+      <Shortcut>pagedreqdto</Shortcut>
+      <Description>CRUD PagedEntityResultRequest片段</Description>
+      <Author>Personball</Author>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>Abp.Application.Services.Dto</Namespace>
+        </Import>
+         <Import>
+          <Namespace>System</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>替换为实体的名称</ToolTip>
+          <Default>EntityName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+     public class Paged$name$ResultRequestDto : PagedResultRequestDto
+    {
+        public string Keyword { get; set; }
+        public DateTimeOffset? From { get; set; }
+        public DateTimeOffset? To { get; set; }
+    }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
