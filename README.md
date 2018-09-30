@@ -28,10 +28,11 @@ Abp Code Snippets For Visual Studio Code And Visual Studio
 
 ## vs2017
 
+![vs2017A](vs2017A.gif)
 
 # 说明
 
-目前vscode代码片段仅包含abp官方导出项目模板中的Vue SPA项目。
+目前vscode代码片段仅包含abp官方导出项目模板中的Vue SPA项目（使用的是Vue ui框架iview并使用了TypeScript，用yarn serve启动，yarn build 构建发布）。
 
 欢迎大家提交ABP相关代码片段pr到本库，若有问题，请提issue。
 
