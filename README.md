@@ -2,15 +2,18 @@
 
 Abp Code Snippets For Visual Studio Code And Visual Studio
 
-vscode
-|Prefix|Remark|
-|:---|:---:|
-|ivcreate|iview 创建弹层|
-|ivedit|iview 编辑弹层|
-|ivlist|iview 列表页|
-|ivmod-crud|vuex 模块代码，状态及api调用|
+vscode  
+
+| Prefix | Remark |
+| :---------: | :-------- |
+| ivcreate | iview 创建弹层 |
+| ivedit | iview 编辑弹层 |
+| ivlist | iview 列表页 |
+| ivmod-crud | vuex 模块代码，状态及api调用 |  
+
 
 vs2017
+
 |Shortcut|Remark|  
 |:---|:---|
 |entityfa|继承FullAuditedEntity的实体|
