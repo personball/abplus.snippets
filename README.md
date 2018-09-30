@@ -2,6 +2,26 @@
 
 Abp Code Snippets For Visual Studio Code And Visual Studio
 
+vscode  
+|Prefix|Remark|  
+|:---|:---|
+|ivcreate| iview 创建弹层 |
+|ivedit| iview 编辑弹层 |
+|ivlist| iview 列表页 |
+|ivmod-crud| vuex 模块代码，状态及api调用|
+
+vs2017
+|Shortcut|Remark|  
+|:---|:---|
+|entityfa|继承FullAuditedEntity的实体|
+|entityca|继承CreationAuditedEntity的实体|
+|dbset|在DbContext中添加新实体|
+|iasynccrud|AppService接口|
+|asynccrud|AppService|
+|entitydto|带AutoMapFrom的实体Dto|
+|mapprofile|AutoMapper对象映射规则|
+|pagedreqdto|继承PagedResultRequestDto的分页接口请求参数Dto|
+
 # Setup-安装 
 
 ## vscode
@@ -37,6 +57,6 @@ Abp Code Snippets For Visual Studio Code And Visual Studio
 欢迎大家提交ABP相关代码片段pr到本库，若有问题，请提issue。
 
 ## 版本
-本库暂无版本管理，后续代码片段增加，若遇到prefix冲突或变更，再进行版本管理。
+本库暂无版本管理，后续代码片段增加，若遇到prefix冲突或变更，再进行版本管理。以后可能在prefix或shortcut中添加前缀
 
 ## MIT
