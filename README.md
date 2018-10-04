@@ -24,6 +24,8 @@ vs2017
 |entitydto|带AutoMapFrom的实体Dto|
 |mapprofile|AutoMapper对象映射规则|
 |pagedreqdto|继承PagedResultRequestDto的分页接口请求参数Dto|
+|cachem| `private readonly ICacheManager _cacheManager` 以及导入其命名空间 |
+|eventhandler|`IEventHandler`的代码片段|
 
 # Setup-安装 
 
