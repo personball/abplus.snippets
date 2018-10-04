@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Abplus EventHandler片段</Title>
+      <Shortcut>eventhandler</Shortcut>
+      <Description>EventHandler片段</Description>
+      <Author>Personball</Author>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>Abp.Dependency</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Abp.Events.Bus.Entities</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Abp.Events.Bus.Handlers</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>替换为实体的名称</ToolTip>
+          <Default>EntityName</Default>
+        </Literal>
+        <Literal>
+          <ID>verb</ID>
+          <ToolTip>替换为动词</ToolTip>
+          <Default>DoSomeBusiness</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+    public class $name$$verb$Handler : IEventHandler<EntityChangedEventData<$name$>>, ITransientDependency
+    {
+        
+        public $name$$verb$Handler()
+        {
+        }
+        
+        public void HandleEvent(EntityChangedEventData<$name$> eventData)
+        {
+         $end$
+        }
+    }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
