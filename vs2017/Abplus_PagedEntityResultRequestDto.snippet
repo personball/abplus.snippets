@@ -33,6 +33,8 @@
         public string Keyword { get; set; }
         public DateTimeOffset? From { get; set; }
         public DateTimeOffset? To { get; set; }
+        //在get请求中,枚举类型的属性名必须和枚举名一致,以防止前端通过nswag生成proxy时提取枚举类型命名出现问题
+        //比如 public HistoryType Type {get;set;} 应改为 public HistoryType HistoryType {get;set;}
     }]]></Code>
     </Snippet>
   </CodeSnippet>
