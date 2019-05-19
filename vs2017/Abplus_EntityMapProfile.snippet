@@ -29,7 +29,6 @@
     {
         public $name$MapProfile()
         {
-            CreateMap<$name$Dto, $name$>();
             CreateMap<$name$Dto, $name$>()
                 .ForMember(x => x.CreationTime, opt => opt.Ignore());
         }
