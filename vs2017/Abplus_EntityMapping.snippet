@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Abplus Entity Mapping片段</Title>
+      <Shortcut>emap</Shortcut>
+      <Description>Entity Mapping,实体ef fluentApi配置类片段</Description>
+      <Author>Personball</Author>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>Microsoft.EntityFrameworkCore.Metadata.Builders</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>替换为实体的名称</ToolTip>
+          <Default>EntityName</Default>
+        </Literal>
+        <Literal>
+          <ID>ProjectName</ID>
+          <ToolTip>替换为项目的名称</ToolTip>
+          <Default>ProjectName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+    public class $name$Configuration : $ProjectName$EntityTypeConfiguration<$name$>
+    {
+        public override void Configure(EntityTypeBuilder<$name$> builder)
+        {
+            //TODO
+        }
+    }
+  $end$
+  ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
