@@ -13,10 +13,10 @@
     <Snippet>
       <Imports>
         <Import>
-          <Namespace>Abp.Application.Services</Namespace>
+          <Namespace>Volo.Abp.Application.Services</Namespace>
         </Import>
         <Import>
-          <Namespace>Abp.Application.Services.Dto</Namespace>
+          <Namespace>Volo.Abp.Application.Services.Dto</Namespace>
         </Import>
       </Imports>
       <Declarations>
@@ -28,7 +28,7 @@
       </Declarations>
       <Code Language="csharp">
         <![CDATA[
-     public interface I$name$AppService : IAsyncCrudAppService<$name$Dto, int, Paged$name$ResultRequestDto, Create$name$Dto, $name$Dto>
+     public interface I$name$AppService : ICrudAppService<$name$Dto, Guid, Paged$name$ResultRequestDto, Create$name$Dto, $name$Dto>
     {
     }]]></Code>
     </Snippet>

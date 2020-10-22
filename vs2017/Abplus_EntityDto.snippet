@@ -31,13 +31,12 @@
       </Declarations>
       <Code Language="csharp">
         <![CDATA[
-    [AutoMapFrom(typeof($name$))]
     public class $name$Dto : EntityDto
     {
         /// <summary>
         /// 名称
         /// </summary>
-        [StringLength($name$.MaxLengthName)]
+        [MaxLength($name$Consts.NameMaxLength)]
         public string Name { get; set; }
 
         $end$

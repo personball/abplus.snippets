@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>AppService_Tests片段</Title>
+      <Shortcut>apptests</Shortcut>
+      <Description>AppService_Tests片段</Description>
+      <Author>Personball</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>替换为服务的名称</ToolTip>
+          <Default>EntityName</Default>
+        </Literal>
+      </Declarations>
+       <Imports>
+        <Import>
+          <Namespace>System.Threading.Tasks</Namespace>
+        </Import> 
+        <Import>
+          <Namespace>Volo.Abp.DependencyInjection</Namespace>
+        </Import>
+      </Imports>
+      <Code Language="csharp">
+        <![CDATA[
+    public class $name$_Tests : ITransientDependency
+    {
+        private readonly I$name$ _$name$;
+
+        public $name$_Tests(I$name$ $name$)
+        {
+            _$name$ = $name$;
+        }
+
+        public async Task RunAsync()
+        {
+
+        }
+    }
+     ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

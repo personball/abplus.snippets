@@ -5,17 +5,12 @@
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
-      <Title>Abplus Repository片段</Title>
-      <Shortcut>prirepo</Shortcut>
-      <Description>Repository声明</Description>
+      <Title>Abplus DbContext DbSet片段</Title>
+      <Shortcut>idbset</Shortcut>
+      <Description>DbContext DbSet片段</Description>
       <Author>Personball</Author>
     </Header>
     <Snippet>
-      <Imports>
-        <Import>
-          <Namespace>Volo.Abp.Domain.Repositories</Namespace>
-        </Import>
-      </Imports>
       <Declarations>
         <Literal>
           <ID>name</ID>
@@ -25,9 +20,8 @@
       </Declarations>
       <Code Language="csharp">
         <![CDATA[
-  private readonly IRepository<$name$> _$name$Repository;
-  $end$
-  ]]></Code>
+    DbSet<$name$> $name$s { get; }
+     ]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>

@@ -13,19 +13,19 @@
     <Snippet>
       <Imports>
         <Import>
-          <Namespace>Abp.Application.Services</Namespace>
+          <Namespace>Volo.Abp.Application.Services</Namespace>
         </Import>
         <Import>
-          <Namespace>Abp.Application.Services.Dto</Namespace>
+          <Namespace>Volo.Abp.Application.Services.Dto</Namespace>
         </Import>
         <Import>
-          <Namespace>Abp.Domain.Repositories</Namespace>
+          <Namespace>Volo.Abp.Domain.Repositories</Namespace>
         </Import>
          <Import>
-          <Namespace>Abp.Extensions</Namespace>
+          <Namespace>Volo.Abp.Extensions</Namespace>
         </Import>
          <Import>
-          <Namespace>Abp.Linq.Extensions</Namespace>
+          <Namespace>Volo.Abp.Linq.Extensions</Namespace>
         </Import>
          <Import>
           <Namespace>System.Linq</Namespace>
@@ -45,18 +45,17 @@
       </Declarations>
       <Code Language="csharp">
         <![CDATA[
-     public class $name$AppService : AsyncCrudAppService<$name$, $name$Dto, int, Paged$name$ResultRequestDto, Create$name$Dto, $name$Dto>, I$name$AppService
+     public class $name$AppService : CrudAppService<$name$, $name$Dto, int, Paged$name$ResultRequestDto, Create$name$Dto, $name$Dto>, I$name$AppService
     {
         public $name$AppService(
-            IRepository<$name$> repository)
+            IRepository<$name$, int> repository)
             : base(repository)
         {
-            LocalizationSourceName = $pname$Consts.LocalizationSourceName;
         }
         
         protected override IQueryable<$name$> CreateFilteredQuery(Paged$name$ResultRequestDto input)
         {
-            return Repository.GetAll()
+            return Repository
                 //.WhereIf(!input.Keyword.IsNullOrWhiteSpace(), b => b.Name.Contains(input.Keyword))
                 .WhereIf(input.From.HasValue, b => b.CreationTime >= input.From.Value.LocalDateTime)
                 .WhereIf(input.To.HasValue, b => b.CreationTime <= input.To.Value.LocalDateTime);

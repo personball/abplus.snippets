@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>AppServiceClient_Tests片段</Title>
+      <Shortcut>clientt</Shortcut>
+      <Description>AppServiceClient_Tests片段</Description>
+      <Author>Personball</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>替换为服务的名称</ToolTip>
+          <Default>EntityName</Default>
+        </Literal>
+        <Literal>
+          <ID>name2</ID>
+          <ToolTip>替换为服务的名称</ToolTip>
+          <Default>entityName</Default>
+        </Literal>
+      </Declarations>
+       <Imports>
+        <Import>
+          <Namespace>System.Threading.Tasks</Namespace>
+        </Import> 
+        <Import>
+          <Namespace>Volo.Abp.MultiTenancy</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Volo.Abp.DependencyInjection</Namespace>
+        </Import>
+      </Imports>
+      <Code Language="csharp">
+        <![CDATA[
+    public class $name$AppService_Tests : AppServiceTestBase, ITransientDependency
+    {
+        private readonly I$name$AppService _$name2$AppService;
+        public $name$AppService_Tests(
+            I$name$AppService $name2$AppService,
+            ICurrentTenant currentTenant)
+            : base(currentTenant)
+        {
+          _$name2$AppService = $name2$AppService;
+        }
+
+        public async Task RunAsync()
+        {
+
+        }
+    }
+     ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

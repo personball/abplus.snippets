@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Xunit_Tests片段</Title>
+      <Shortcut>factt</Shortcut>
+      <Description>XUnit_Tests片段</Description>
+      <Author>Personball</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>displayName</ID>
+          <ToolTip>替换为DisplayName</ToolTip>
+          <Default>SomethingShouldSuccessOrFail</Default>
+        </Literal>
+        <Literal>
+          <ID>methodName</ID>
+          <ToolTip>替换为方法的名称</ToolTip>
+          <Default>SomethingShouldSuccessOrFail</Default>
+        </Literal>
+      </Declarations>
+       <Imports>
+        <Import>
+          <Namespace>System.Threading.Tasks</Namespace>
+        </Import> 
+        <Import>
+          <Namespace>Xunit</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Shouldly</Namespace>
+        </Import>
+      </Imports>
+      <Code Language="csharp">
+        <![CDATA[
+        [Fact(DisplayName = "$end$")]
+        public async Task $methodName$_Test()
+        {
+            await WithUnitOfWorkAsync(async () =>
+            {
+                1.ShouldBe(2);
+            });
+        }
+     ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
