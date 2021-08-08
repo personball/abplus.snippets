@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Abplus Enum片段</Title>
+      <Shortcut>ienum</Shortcut>
+      <Description>Enum片段</Description>
+      <Author>Personball</Author>
+    </Header>
+    <Snippet>  
+     <Imports>
+        <Import>
+          <Namespace>Newtonsoft.Json</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Newtonsoft.Json.Converters</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>替换为枚举的名称</ToolTip>
+          <Default>EnumName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum $name$
+    {
+       Pending=0,
+    }
+     ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

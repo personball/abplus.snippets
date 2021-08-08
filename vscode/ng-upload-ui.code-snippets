@@ -1,0 +1,38 @@
+{
+  "abp-upload-ui": {
+    "scope": "typescript",
+    "prefix": "abp-upload-ui",
+    "body": [
+      "ui: {",
+      "widget: 'upload',",
+      "action: AppConsts.remoteServiceBaseUrl + '/UploadFile',",
+      "listType: 'picture-card',",
+      "asyncData: () => {",
+      "let fileList = [];",
+      "if (this.imageUrl) {",
+      "fileList.push({ url: AppConsts.imgBaseUrl + '/' + this.imageUrl });",
+      "}",
+      "return of(fileList);",
+      "},",
+      "beforeUpload: (file: UploadFile, fileList: UploadFile[]) => {",
+      "if (this.imageUrl) {",
+      "this.notify.error('只能上传一张主图！');",
+      "return false;",
+      "}",
+      "return true;",
+      "},",
+      "change: (args: UploadChangeParam) => {",
+      "if (args.type === 'success') {",
+      "this.imageUrl = args.file.response.imgSrc;",
+      "}",
+      "},",
+      "remove: (file: UploadFile) => {",
+      "console.log('remove', file);",
+      "this.imageUrl = null;",
+      "return true;",
+      "}",
+      "}",
+    ],
+    "description": "ng alain upload组件代码"
+  }
+}
