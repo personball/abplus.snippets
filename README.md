@@ -16,13 +16,14 @@ vs2017
 
 |Shortcut|Remark|  
 |:---|:---|
+|ienum|带 `[JsonConverter(typeof(StringEnumConverter))]`的枚举声明，自动导入命名空间 |
 |entityfa|继承FullAuditedEntity的实体|
 |entityca|继承CreationAuditedEntity的实体|
 |dbset|在DbContext中添加新实体|
-|iasynccrud|AppService接口|
-|asynccrud|AppService|
+|iasynccrud|`ICrudAppService<>`接口|
+|asynccrud|`CrudAppService<>`|
 |entitydto|带AutoMapFrom的实体Dto|
-|mapprofile|AutoMapper对象映射规则|
+|mapprofile|AutoMapper对象映射规则Profile文件|
 |pagedreqdto|继承PagedResultRequestDto的分页接口请求参数Dto|
 |cachem| `private readonly ICacheManager _cacheManager` 以及导入其命名空间 |
 |eventhandler|`IEventHandler`的代码片段|
